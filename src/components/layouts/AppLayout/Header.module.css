@@ -1,6 +1,5 @@
 .header {
   padding-top: var(--mantine-spacing-sm);
-  border-bottom: 1px solid light-dark(var(--mantine-color-gray-2), transparent);
   margin-bottom: 120px;
 }
 

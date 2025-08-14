@@ -9,7 +9,7 @@ import {
 } from "@mantine/core";
 import { randomId } from "@mantine/hooks";
 import { IconArrowUp } from "@tabler/icons-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Message = (props: { text: string; isUser: boolean }) => {
   const content = (
@@ -34,6 +34,7 @@ type Message = {
 };
 
 export function Chat() {
+  const messagesBoxRef = useRef<HTMLDivElement>(null);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: randomId(),
@@ -55,6 +56,12 @@ export function Chat() {
       },
     ]);
     setTimeout(() => {
+      messagesBoxRef.current?.scrollTo({
+        top: messagesBoxRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }, 100);
+    setTimeout(() => {
       setMessages((prevState) => [
         ...prevState,
         {
@@ -63,6 +70,12 @@ export function Chat() {
           text: "Hello World,\nthis is a long message to test the wrapping of the text.",
         },
       ]);
+      setTimeout(() => {
+        messagesBoxRef.current?.scrollTo({
+          top: messagesBoxRef.current.scrollHeight,
+          behavior: "smooth",
+        });
+      }, 100);
     }, 1000);
     setText("");
   };
@@ -75,7 +88,12 @@ export function Chat() {
       style={{ height: "calc(100vh - 60px)" }}
     >
       <Stack h="100%">
-        <Stack h="100%" style={{ flexGrow: 1, overflow: "auto" }} gap="5">
+        <Stack
+          h="100%"
+          style={{ flexGrow: 1, overflow: "auto" }}
+          gap="5"
+          ref={messagesBoxRef}
+        >
           {messages.map((message) => (
             <Message key={message.id} {...message} />
           ))}
