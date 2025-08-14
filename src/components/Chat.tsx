@@ -20,7 +20,7 @@ const Message = (props: { text: string; isUser: boolean }) => {
   if (!props.isUser) return content;
   return (
     <Group justify="end">
-      <Paper px="md" py={5} withBorder style={{ borderRadius: 16 }}>
+      <Paper px="md" py="6px" withBorder style={{ borderRadius: 16 }}>
         {content}
       </Paper>
     </Group>
@@ -86,16 +86,17 @@ export function Chat() {
         <Stack
           h="100%"
           style={{ flexGrow: 1, overflow: "auto" }}
-          gap="5"
           ref={messagesBoxRef}
         >
-          <Container size="md" w="100%">
-            {messages.map((message) => (
-              <Message key={message.id} {...message} />
-            ))}
+          <Container size="md" w="100%" p={0}>
+            <Stack gap="4px">
+              {messages.map((message) => (
+                <Message key={message.id} {...message} />
+              ))}
+            </Stack>
           </Container>
         </Stack>
-        <Container size="md" pos="relative" w="100%">
+        <Container size="md" pos="relative" p={0} w="100%">
           <Textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
