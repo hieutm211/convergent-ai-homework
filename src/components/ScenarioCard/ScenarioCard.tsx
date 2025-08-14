@@ -1,4 +1,5 @@
 import { Card, Progress, Text } from "@mantine/core";
+import classes from "./ScenarioCard.module.css";
 
 export function ScenarioCard(props: {
   title: string;
@@ -10,7 +11,7 @@ export function ScenarioCard(props: {
     description = "Form context management, Switch, Grid and Indicator components improvements, new hook and 10+ other changes",
   } = props;
   return (
-    <Card withBorder padding="lg" radius="md">
+    <Card withBorder padding="lg" radius="md" className={classes.card}>
       <Text fz="lg" fw={500} mt="md">
         {title}
       </Text>

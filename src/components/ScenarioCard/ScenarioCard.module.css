@@ -1,0 +1,6 @@
+.card {
+  @mixin hover {
+    box-shadow: var(--mantine-shadow-md);
+    cursor: pointer;
+  }
+}
