@@ -34,7 +34,13 @@ export function Chat() {
       text: string;
       isUser: boolean;
     }[]
-  >([]);
+  >([
+    {
+      id: randomId(),
+      isUser: false,
+      text: "Hi there! I'm Convergent AI. Let's practice!",
+    },
+  ]);
   const [text, setText] = useState("");
 
   const handleSend = () => {
