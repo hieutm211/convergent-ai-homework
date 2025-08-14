@@ -7,38 +7,38 @@ export const useScenarioQueries = () => {
       return Promise.resolve([
         {
           id: "1",
-          title: "5.3 minor release (September 2022)",
+          title: "Difficult Customer Handling",
           description:
-            "Form context management, Switch, Grid and Indicator components improvements, new hook and 10+ other changes",
-          progress: 23,
+            "Chat with AI simulating people from different cultural backgrounds to practice being respectful, adaptable, and clear in diverse contexts",
+          progress: 0,
         },
         {
           id: "2",
-          title: "5.3 minor release (September 2022)",
+          title: "Job Interview Simulator",
           description:
-            "Form context management, Switch, Grid and Indicator components improvements, new hook and 10+ other changes",
-          progress: 23,
+            "Practice answering common and challenging interview questions with AI acting as a recruiter. Get feedback on your clarity, confidence, and body language cues.",
+          progress: 5,
         },
         {
           id: "3",
-          title: "5.3 minor release (September 2022)",
+          title: "Conflict Resolution Roleplay",
           description:
-            "Form context management, Switch, Grid and Indicator components improvements, new hook and 10+ other changes",
-          progress: 23,
+            "Engage in simulated workplace disputes with AI colleagues or managers to practice staying calm, listening actively, and reaching constructive agreements.",
+          progress: 0,
         },
         {
           id: "4",
-          title: "5.3 minor release (September 2022)",
+          title: "Public Speaking Rehearsal",
           description:
-            "Form context management, Switch, Grid and Indicator components improvements, new hook and 10+ other changes",
-          progress: 23,
+            "Deliver speeches or presentations to AI and receive instant feedback on tone, pacing, and clarity to captivate your audience.",
+          progress: 22,
         },
         {
           id: "5",
-          title: "5.3 minor release (September 2022)",
+          title: "Persuasive Pitch Coaching",
           description:
-            "Form context management, Switch, Grid and Indicator components improvements, new hook and 10+ other changes",
-          progress: 23,
+            "Practice presenting ideas to AI stakeholders or investors, focusing on persuasive techniques, storytelling, and answering tough questions.",
+          progress: 0,
         },
       ]);
     },

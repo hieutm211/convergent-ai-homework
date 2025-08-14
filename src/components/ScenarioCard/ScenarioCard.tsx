@@ -1,4 +1,4 @@
-import { Card, Progress, Text } from "@mantine/core";
+import { Card, Flex, Progress, Stack, Text } from "@mantine/core";
 import classes from "./ScenarioCard.module.css";
 
 export function ScenarioCard(props: {
@@ -6,27 +6,30 @@ export function ScenarioCard(props: {
   description: string;
   progress: number;
 }) {
-  const {
-    title = "5.3 minor release (September 2022)",
-    description = "Form context management, Switch, Grid and Indicator components improvements, new hook and 10+ other changes",
-  } = props;
+  const { title, description, progress } = props;
   return (
     <Card withBorder padding="lg" radius="md" className={classes.card}>
-      <Text fz="lg" fw={500} mt="md">
-        {title}
-      </Text>
-      <Text fz="sm" c="dimmed" mt={5}>
-        {description}
-      </Text>
+      <Flex h="100%" direction="column" gap={0} justify="space-between">
+        <Stack gap={0}>
+          <Text fz="lg" fw={500} mt="md">
+            {title}
+          </Text>
+          <Text fz="sm" c="dimmed" mt={5}>
+            {description}
+          </Text>
+        </Stack>
 
-      <Text c="dimmed" fz="sm" mt="md">
-        Tasks completed:{" "}
-        <Text span fw={500} c="bright">
-          23/36
-        </Text>
-      </Text>
+        <Stack gap={0}>
+          <Text c="dimmed" fz="sm" mt="md">
+            Progress:{" "}
+            <Text span fw={500} c="bright">
+              {progress}%
+            </Text>
+          </Text>
 
-      <Progress value={(23 / 36) * 100} mt={5} />
+          <Progress value={progress} mt={5} />
+        </Stack>
+      </Flex>
     </Card>
   );
 }
