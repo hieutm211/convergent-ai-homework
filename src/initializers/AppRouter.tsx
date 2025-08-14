@@ -1,11 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import { Home } from "../components/Home";
+import { Index } from "../components/Index";
+import { AuthSignIn } from "../components/auth/AuthSignIn";
 
 export function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route index element={<Index />} />
+        <Route path="auth">
+          <Route path="sign-in" element={<AuthSignIn />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
