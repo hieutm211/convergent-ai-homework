@@ -27,14 +27,14 @@ const Message = (props: { text: string; isUser: boolean }) => {
   );
 };
 
+type Message = {
+  id: string;
+  text: string;
+  isUser: boolean;
+};
+
 export function Chat() {
-  const [messages, setMessages] = useState<
-    {
-      id: string;
-      text: string;
-      isUser: boolean;
-    }[]
-  >([
+  const [messages, setMessages] = useState<Message[]>([
     {
       id: randomId(),
       isUser: false,
@@ -84,9 +84,16 @@ export function Chat() {
           <Textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
+            placeholder="Type your message..."
+            py={2}
             minRows={3}
             maxRows={10}
             autosize
+            styles={{
+              input: {
+                paddingBlock: 10,
+              },
+            }}
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey) {
                 e.preventDefault();
