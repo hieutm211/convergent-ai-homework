@@ -14,6 +14,7 @@ import { zod4Resolver } from "mantine-form-zod-resolver";
 import { z } from "zod";
 import classes from "./AuthSignIn.module.css";
 import { useForm } from "@mantine/form";
+import { useNavigate } from "react-router";
 
 const schema = z.object({
   email: z.email("Invalid email"),
@@ -25,6 +26,8 @@ const schema = z.object({
 type FormValue = z.infer<typeof schema>;
 
 export function AuthSignIn() {
+  const navigate = useNavigate();
+
   const form = useForm<FormValue>({
     initialValues: {
       email: "",
@@ -36,6 +39,7 @@ export function AuthSignIn() {
 
   const onSubmit = (values: FormValue) => {
     console.log(values);
+    navigate("/home");
   };
 
   return (
