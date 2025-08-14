@@ -81,12 +81,7 @@ export function Chat() {
   };
 
   return (
-    <Container
-      size="md"
-      p="md"
-      pt="xl"
-      style={{ height: "calc(100vh - 60px)" }}
-    >
+    <Stack p="md" pt="xl" style={{ height: "calc(100vh - 60px)" }}>
       <Stack h="100%">
         <Stack
           h="100%"
@@ -94,11 +89,13 @@ export function Chat() {
           gap="5"
           ref={messagesBoxRef}
         >
-          {messages.map((message) => (
-            <Message key={message.id} {...message} />
-          ))}
+          <Container size="md" w="100%">
+            {messages.map((message) => (
+              <Message key={message.id} {...message} />
+            ))}
+          </Container>
         </Stack>
-        <Stack pos="relative" w="100%">
+        <Container size="md" pos="relative" w="100%">
           <Textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -129,8 +126,8 @@ export function Chat() {
           >
             <IconArrowUp size={24} />
           </ActionIcon>
-        </Stack>
+        </Container>
       </Stack>
-    </Container>
+    </Stack>
   );
 }
