@@ -5,6 +5,7 @@ import { Home } from "../components/Home";
 import { AppLayout } from "../components/layouts/AppLayout/AppLayout";
 import { ChatLayout } from "../components/layouts/ChatLayout/ChatLayout";
 import { Chat } from "../components/Chat";
+import { AuthLayout } from "../components/layouts/AuthLayout/AuthLayout";
 
 export function AppRouter() {
   return (
@@ -17,7 +18,7 @@ export function AppRouter() {
         <Route element={<ChatLayout />}>
           <Route path="chat" element={<Chat />} />
         </Route>
-        <Route path="auth">
+        <Route path="auth" element={<AuthLayout />}>
           <Route path="sign-in" element={<AuthSignIn />} />
         </Route>
       </Routes>

@@ -43,7 +43,7 @@ export function AuthSignIn() {
   };
 
   return (
-    <Container size={420} my={40} mt="10%">
+    <Container size={420} py={40} pt="10%">
       <Title ta="center" className={classes.title}>
         Welcome back!
       </Title>
